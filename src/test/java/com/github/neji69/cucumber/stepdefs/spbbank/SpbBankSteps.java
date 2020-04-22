@@ -4,11 +4,8 @@ import com.github.neji69.SpbBank.BspbRuAuth;
 import com.github.neji69.SpbBank.Home;
 import com.github.neji69.SpbBank.OverviewPage;
 import com.github.neji69.SpbBank.TwoFactAuth;
-import io.cucumber.java.ru.Дано;
 import io.cucumber.java.ru.Затем;
 import io.cucumber.java.ru.Тогда;
-
-import static com.codeborne.selenide.Selenide.open;
 
 public class SpbBankSteps {
 
@@ -21,7 +18,6 @@ public class SpbBankSteps {
     private static final String LOGIN = "demo";
     private static final String PASSWORD = "demo";
     private static final String SMS_CODE = "0000";
-
 
     @Тогда("открывается страница Авторизации и пользователь авторизируется используя логин и пароль")
     public void userAuthorization() {

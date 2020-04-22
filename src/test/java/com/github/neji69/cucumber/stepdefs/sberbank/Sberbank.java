@@ -14,7 +14,6 @@ public class Sberbank {
     DepositPage depositPage = new DepositPage();
     DriveDepositOfferPage driveDepositOfferPage = new DriveDepositOfferPage();
 
-
     @Тогда("проверка перехода, название страницы {string}")
     public void checkOpenPageFromTitle(String title) {
         homePage.checkOpenPageFromTitle(title);
@@ -49,7 +48,7 @@ public class Sberbank {
     }
 
     @Затем("отключить чек-бокс {string} и выбрать {string} и {string}")
-    public void выбрать_чек_боксы_Хочу_снимать_и_Хочу_пополнять(String nameCheckBox1, String nameCheckBox2, String nameCheckBox3) {
+    public void selectedCheckBox(String nameCheckBox1, String nameCheckBox2, String nameCheckBox3) {
         depositPage.checkedCheckBox(nameCheckBox1);
         depositPage.checkedCheckBox(nameCheckBox2);
         depositPage.checkedCheckBox(nameCheckBox3);

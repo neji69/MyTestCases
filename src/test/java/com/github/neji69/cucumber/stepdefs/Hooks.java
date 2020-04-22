@@ -4,9 +4,9 @@ import com.codeborne.selenide.Configuration;
 import io.cucumber.java.Before;
 
 public class Hooks {
-//    @Before
-//    public void browserSetup() {
-//        Configuration.browser = "opera";
-//        System.setProperty("selenide.browser", "opera");
-//    }
+    @Before
+    public void browserSetup() {
+        Configuration.browser = "firefox";
+        System.setProperty("selenide.browser", "firefox");
+    }
 }

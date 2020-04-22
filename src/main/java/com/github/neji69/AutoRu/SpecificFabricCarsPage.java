@@ -29,7 +29,7 @@ public class SpecificFabricCarsPage {
      */
     public void parseAmountCarStepTwo() {
         Pattern pattern = Pattern.compile("\\d+");
-        String symbolAndAmount = $x("//span[contains(text(),'Показать')]").waitUntil(Condition.visible,10000).getText();
+        String symbolAndAmount = $x("//span[contains(text(),'Показать')]").waitUntil(Condition.visible, 10000).getText();
         symbolAndAmount = symbolAndAmount.replace(" ", "");// Убираем пробелы в строке
         Matcher matcher = pattern.matcher(symbolAndAmount);
         int start = 0;

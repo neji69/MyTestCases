@@ -10,5 +10,4 @@ public class CommonSteps {
     public void openUrl(String url) {
         open(url);
     }
-
 }
