@@ -7,6 +7,7 @@ import java.util.regex.Pattern;
 
 import static com.codeborne.selenide.Selenide.$x;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.within;
 
 public class SpecificModelCarPage {
     private int modelCarAmount;
@@ -33,6 +34,6 @@ public class SpecificModelCarPage {
     public void compareTheNumberOfCars(int previousPageModelCarAmount) {
         assertThat(previousPageModelCarAmount)
                 .as("Сравниваем количество машин на этой странице с предыдущей")
-                .isEqualTo(modelCarAmount);
+                .isCloseTo(modelCarAmount, within(6));
     }
 }

@@ -11,6 +11,7 @@ import java.util.regex.Pattern;
 import static com.codeborne.selenide.Selenide.$$x;
 import static com.codeborne.selenide.Selenide.$x;
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.within;
 
 public class SpecificFabricCarsPage {
 
@@ -46,8 +47,8 @@ public class SpecificFabricCarsPage {
     public void compareTheNumberOfCars(int homePageCarAmount) {
         assertThat(homePageCarAmount)
                 .as("Сравниваем количество машин на этой странице с предыдущей")
-                .isEqualTo(carAmount);
-    }
+                .isCloseTo(carAmount, within(6));
+        }
 
     /**
      * Метод парсит количество обьявлений выбранной модели автомобиля и кликает по ней".
