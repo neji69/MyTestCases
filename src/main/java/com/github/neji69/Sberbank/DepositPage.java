@@ -24,7 +24,6 @@ public class DepositPage {
      * метод проверяет количество чек-боксов на странице и их названия
      */
     public void CheckAmountCheckBoxAndTheirName(int size, List<String> dataTableCheckBox) {
-        switchTo().frame("iFrameResizer0");
         tabCheckBox.shouldHaveSize(size); // Проверяем количество чек-боксов на странице
         tabCheckBox.shouldHave(exactTexts(dataTableCheckBox)); // Проверяем наименования чек-боксов из таблицы-данных
     }
@@ -86,7 +85,8 @@ public class DepositPage {
      * Метод кликает по вкладке "Подобрать вклад"
      */
     public void clickTabPodobrat() {
-        tabPodobratVklad.scrollTo();
         tabPodobratVklad.click();
+        tabPodobratVklad.scrollTo();
+        switchTo().frame("iFrameResizer0");
     }
 }

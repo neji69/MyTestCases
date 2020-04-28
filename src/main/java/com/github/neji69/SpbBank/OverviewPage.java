@@ -5,8 +5,7 @@ import org.openqa.selenium.By;
 
 import java.util.regex.Pattern;
 
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.title;
+import static com.codeborne.selenide.Selenide.*;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class OverviewPage {
@@ -22,6 +21,7 @@ public class OverviewPage {
     }
 
     public OverviewPage checkValueContentFinanceFree() {
+        sleep(1500);
         assertThat(financeFreeLocator.getText())
                 .as("На странице отображается блок «Финансовая свобода» и сумма в блоке 'финансовая свобода' в формате 123 456 789.00 ")
                 .contains("Финансовая свобода")
@@ -30,12 +30,11 @@ public class OverviewPage {
     }
 
     public OverviewPage moveToElementAndCheckValueContentFinanceFree() {
-        financeFreeLocator.hover();
+        actions().moveToElement(financeFreeLocator).build().perform();
         assertThat(financeFreeLocator.hover().getText())
                 .as("Появляется надпись: «Моих средств» с указанием суммы в формате 123 456 789.00 ")
                 .contains("Моих средств")
                 .containsPattern(PATTERN);
         return this;
     }
-
 }

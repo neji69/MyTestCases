@@ -2,6 +2,7 @@ package com.github.neji69.cucumber.stepdefs.spbbank;
 
 import com.github.neji69.SpbBank.OverviewPage;
 import io.cucumber.java.ru.Затем;
+import io.cucumber.java.ru.И;
 
 public class SpbBankStepOverviewPage {
 
@@ -12,12 +13,12 @@ public class SpbBankStepOverviewPage {
         overviewPage.checkPageOpeningByTitle();
     }
 
-    @Затем("проверяем что на странице отобразился блок Финансовая свобода и рядом отображаеться сумма в нужном формате")
+    @И("проверяем что на странице отобразился блок Финансовая свобода и рядом отображаеться сумма в нужном формате")
     public void checkValueContentFinanceFree() {
         overviewPage.checkValueContentFinanceFree();
     }
 
-    @Затем("наводим курсор на сумму и проверяем появление строки мои средства с суммой в нужном формате")
+    @И("наводим курсор на сумму и проверяем появление строки мои средства с суммой в нужном формате")
     public void moveToElementAndCheckValueContentFinanceFree() {
         overviewPage.moveToElementAndCheckValueContentFinanceFree();
     }
