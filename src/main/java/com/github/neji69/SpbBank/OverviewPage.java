@@ -21,7 +21,6 @@ public class OverviewPage {
         return this;
     }
 
-
     public OverviewPage checkValueContentFinanceFree() {
         assertThat(financeFreeLocator.getText())
                 .as("На странице отображается блок «Финансовая свобода» и сумма в блоке 'финансовая свобода' в формате 123 456 789.00 ")

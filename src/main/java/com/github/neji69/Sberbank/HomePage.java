@@ -10,15 +10,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class HomePage {
 
-    private static String ADRESS = "https://www.sberbank.ru";
-
     private SelenideElement tabMenu;
     private ElementsCollection tabSubMenu;
-
-
-    public void openPage() {
-        open(ADRESS, HomePage.class);
-    }
 
     /**
      * Метод проверяет соответствие тайтла открытой страницы
@@ -49,5 +42,4 @@ public class HomePage {
             }
         }
     }
-
 }

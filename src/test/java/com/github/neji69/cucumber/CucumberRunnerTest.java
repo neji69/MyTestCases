@@ -8,7 +8,7 @@ import io.cucumber.testng.CucumberOptions;
         plugin = "json:target/cucumber-report.json",
         features = "src/test/resources/feature",
         glue = {"com.github.neji69.cucumber.stepdefs"},
-        tags = "@autoruTest"
+        tags = "@all"
         // "@all"
         // "@autoruTest"
         // "@sberbankTest"

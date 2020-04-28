@@ -20,14 +20,13 @@ public class DepositPage {
     private ElementsCollection tabDepositOffers = $$x("//div[@data-test-id='DepositSelection_ProductCard']");
     private SelenideElement buttonDetailsOffer = $x("//a[@data-test-id='Button-white']");
 
-
     /**
      * метод проверяет количество чек-боксов на странице и их названия
      */
-    public void KolichestvoCheckBoxAndTheirName(int size, List<String> dataTableCheckBox) {
+    public void CheckAmountCheckBoxAndTheirName(int size, List<String> dataTableCheckBox) {
         switchTo().frame("iFrameResizer0");
-        tabCheckBox.shouldHaveSize(size); /** Проверяем количество чек-боксов на странице */
-        tabCheckBox.shouldHave(exactTexts(dataTableCheckBox)); /** Проверяем наименования чек-боксов из таблицы-данных */
+        tabCheckBox.shouldHaveSize(size); // Проверяем количество чек-боксов на странице
+        tabCheckBox.shouldHave(exactTexts(dataTableCheckBox)); // Проверяем наименования чек-боксов из таблицы-данных
     }
 
     /**
@@ -52,10 +51,9 @@ public class DepositPage {
      * Метод принимает, а затем проверяет количество и названия вкладов
      */
     public void sizeDepositOffersAndTheirName(int size, List<String> dataTableDepositOffers) {
-        tabDepositOffers.shouldHaveSize(size); /** Проверяем количество вкладов на странице */
-        tabDepositOffers.shouldHave(textsInAnyOrder(dataTableDepositOffers)); /** Проверяем наименования вкладов из таблицы-данных */
+        tabDepositOffers.shouldHaveSize(size); // Проверяем количество вкладов на странице
+        tabDepositOffers.shouldHave(textsInAnyOrder(dataTableDepositOffers)); // Проверяем наименования вкладов из таблицы-данных
     }
-
 
     /**
      * Метод принимает название чекбокса и кликает по нему
@@ -89,11 +87,6 @@ public class DepositPage {
      */
     public void clickTabPodobrat() {
         tabPodobratVklad.scrollTo();
-        sleep(1000); //без слипа на этом месте часто пролагивает, видимо слабый комп.
         tabPodobratVklad.click();
-
-
     }
-
-
 }

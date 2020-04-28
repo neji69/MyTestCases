@@ -1,40 +1,25 @@
 package com.github.neji69.cucumber.stepdefs.sberbank;
 
 import com.github.neji69.Sberbank.DepositPage;
-import com.github.neji69.Sberbank.DriveDepositOfferPage;
-import com.github.neji69.Sberbank.HomePage;
 import io.cucumber.java.ru.Дано;
 import io.cucumber.java.ru.Затем;
 import io.cucumber.java.ru.Тогда;
 
 import java.util.List;
 
-public class Sberbank {
-    HomePage homePage = new HomePage();
+public class SberbankStepsDepositPage {
+
     DepositPage depositPage = new DepositPage();
-    DriveDepositOfferPage driveDepositOfferPage = new DriveDepositOfferPage();
-
-    @Тогда("проверка перехода, название страницы {string}")
-    public void checkOpenPageFromTitle(String title) {
-        homePage.checkOpenPageFromTitle(title);
-    }
-
-    @Затем("перейти через верхнее меню во {string}")
-    public void goToMenuAndClickDeposit(String item) {
-        homePage.chooseMenuItem(item);
-        homePage.chooseSubMenuItem(item);
-    }
 
     @Затем("перейти на вкладку «Подобрать вклад»")
     public void clickToPickUpDeposit() {
         depositPage.checkOpenPageFromTitle("«Сбербанк» - Подбор вкладов");
         depositPage.clickTabPodobrat();
-
     }
 
     @Дано("{int} чек-бокса")
     public void checkVisibleCheckBox(int size, List<String> dataTable) {
-        depositPage.KolichestvoCheckBoxAndTheirName(size, dataTable);
+        depositPage.CheckAmountCheckBoxAndTheirName(size, dataTable);
     }
 
     @Тогда("проверка, установлен чекбокс {string}")
@@ -65,13 +50,4 @@ public class Sberbank {
         depositPage.clickButtonDetailsOffer();
     }
 
-    @Тогда("проверка, в новом окне открылась вкладка {string}")
-    public void checkInNewWindowOpenedTab(String title) {
-        driveDepositOfferPage.checkOpenPageFromTitle(title);
-    }
-
-    @Тогда("на странице отображается надпись {string}")
-    public void onPageIsDisplayed(String text) {
-        driveDepositOfferPage.checkH2Text(text);
-    }
 }

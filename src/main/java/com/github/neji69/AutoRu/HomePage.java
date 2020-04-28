@@ -10,7 +10,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class HomePage {
 
-    private static String ADRESS = "https://auto.ru";
     private ElementsCollection marks = $$x("//div[@class= 'IndexMarks__col']//a"); // Коллекция из представленных на странице марок автомобилей
 
     private static int carAmount;
@@ -18,7 +17,6 @@ public class HomePage {
     public static int getCarAmount() {
         return carAmount;
     }
-
 
     /**
      * Метод проверяет соответствие тайтла открытой страницы

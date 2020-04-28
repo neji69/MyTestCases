@@ -31,7 +31,7 @@ public class SpecificFabricCarsPage {
     public void parseAmountCarStepTwo() {
         Pattern pattern = Pattern.compile("\\d+");
         String symbolAndAmount = $x("//span[contains(text(),'Показать')]").waitUntil(Condition.visible, 10000).getText();
-        symbolAndAmount = symbolAndAmount.replace(" ", "");// Убираем пробелы в строке
+        symbolAndAmount = symbolAndAmount.replace(" ", "");
         Matcher matcher = pattern.matcher(symbolAndAmount);
         int start = 0;
         while (matcher.find(start)) {
@@ -48,7 +48,7 @@ public class SpecificFabricCarsPage {
         assertThat(homePageCarAmount)
                 .as("Сравниваем количество машин на этой странице с предыдущей")
                 .isCloseTo(carAmount, within(6));
-        }
+    }
 
     /**
      * Метод парсит количество обьявлений выбранной модели автомобиля и кликает по ней".

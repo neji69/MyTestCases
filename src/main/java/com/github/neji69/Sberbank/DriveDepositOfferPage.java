@@ -8,7 +8,6 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class DriveDepositOfferPage {
     private ElementsCollection headers = $$x("//h2[contains(@class,'product')]");
 
-
     /**
      * Метод проверяет соответствие тайтла открытой страницы
      */
@@ -27,6 +26,4 @@ public class DriveDepositOfferPage {
                 .as("На странице надпись  " + text)
                 .contains(text);
     }
-
-
 }

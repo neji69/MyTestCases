@@ -11,18 +11,15 @@ public class BspbRuAuth {
     private SelenideElement passwordElement = $(byName("password"));
     private SelenideElement loginButtonElement = $(".btn-primary");
 
-
     public BspbRuAuth inputLogin(String login) {
         usernameElement.setValue(login);
         return this;
     }
 
-
     public BspbRuAuth inputPassword(String password) {
         passwordElement.setValue(password);
         return this;
     }
-
 
     public TwoFactAuth clickButtonAuthorization() {
         loginButtonElement.click();

@@ -4,10 +4,9 @@ import com.github.neji69.AutoRu.HomePage;
 import io.cucumber.java.ru.Затем;
 import io.cucumber.java.ru.Тогда;
 
-public class AutoRuSteps {
+public class AutoRuStepsHomePage {
 
     HomePage homePage = new HomePage();
-
 
     @Тогда("закрыть всплывающее окно")
     public void closePopUp() {
