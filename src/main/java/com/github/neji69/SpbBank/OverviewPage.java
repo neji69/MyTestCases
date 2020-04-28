@@ -30,6 +30,7 @@ public class OverviewPage {
     }
 
     public OverviewPage moveToElementAndCheckValueContentFinanceFree() {
+        financeFreeLocator.hover();
         assertThat(financeFreeLocator.hover().getText())
                 .as("Появляется надпись: «Моих средств» с указанием суммы в формате 123 456 789.00 ")
                 .contains("Моих средств")
